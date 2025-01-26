@@ -51,7 +51,7 @@ class ServiceProvider extends AddonServiceProvider
         });
 
         $this->app->singleton(MailChimp::class, function () {
-            return new MailChimp(config('mailchimp.api_key'));
+            return new MailChimp(config('statamic.mailchimp-pro.api_key'));
         });
 
         $this->publishes([

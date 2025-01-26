@@ -12,7 +12,7 @@ class MailchimpProAudience extends Relationship
 
     public function __construct()
     {
-        if (config('mailchimp.api_key')) {
+        if (config('statamic.mailchimp-pro.api_key')) {
             $this->mailchimp = app(MailChimp::class);
         }
     }
