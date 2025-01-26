@@ -53,6 +53,10 @@ class ServiceProvider extends AddonServiceProvider
         $this->app->singleton(MailChimp::class, function () {
             return new MailChimp(config('mailchimp.api_key'));
         });
+
+        $this->publishes([
+            __DIR__.'/../config/mailchimp-pro.php' => config_path('statamic/mailchimp-pro.php'),
+        ], 'statamic-mailchimp-pro-config');
     }
 
     public function bootAddon()
@@ -74,7 +78,7 @@ class ServiceProvider extends AddonServiceProvider
 
         Statamic::afterInstalled(function ($command) {
             $command->call('vendor:publish', [
-                '--tag' => 'statamic-mailchimp-config',
+                '--tag' => 'statamic-mailchimp-pro-config',
             ]);
         });
 
