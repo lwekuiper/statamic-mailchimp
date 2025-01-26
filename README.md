@@ -33,7 +33,6 @@ Set your Mailchimp API Key and URL in your `.env` file.
 
 ```yaml
 MAILCHIMP_API_KEY=your-key-here
-MAILCHIMP_API_URL=your-url-here
 ```
 
 ## How to Use
